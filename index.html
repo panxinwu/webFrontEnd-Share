@@ -45,6 +45,7 @@
 					<ul>
 						<li>为什么使用响应式</li>
 						<li>什么时候使用响应式</li>
+						<li>断点设置</li>
 						<li>响应式与模块化</li>
 						<li>响应式与移动端开发过程中遇到过坑</li>
 					</ul>
@@ -69,11 +70,61 @@
 				<!-- 3 -->
 				<section>
 					<section>
+						<h3>按主流设备来设置断点</h3>
+						<table>
+							<tbody>
+								<tr>
+									<td>设备</td>
+									<td>屏幕实际显示宽高</td>
+									<td>渲染宽度</td>
+								</tr>
+								<tr>
+									<td>iPhone 4s</td>
+									<td>640 * 960</td>
+									<td>320 * 480</td>
+								</tr>
+								<tr>
+									<td>iPhone 5s</td>
+									<td>640 * 1136</td>
+									<td>320 * 568</td>
+								</tr>
+								<tr>
+									<td>iPhone 6 plus</td>
+									<td>1080 * 1920 ( 1242 * 2208)</td>
+									<td>414 * 736</td>
+								</tr>
+								<tr>
+									<td>Ipad 1/2/Mini</td>
+									<td>1024*768</td>
+									<td>1024*768</td>
+								</tr>
+								<tr>
+									<td>Ipad 3/4</td>
+									<td>2048*1536</td>
+									<td>1024*768</td>
+								</tr>
+							</tbody>
+						</table>
+						<p><small>示例：<a href="lib/images/iphone-screen.png">iphone分辨率</a></small></p>&nbsp;&nbsp;&nbsp;&nbsp;<p><a href="http://tongji.baidu.com/data/screen">百度 分辨率使用情况</a>
+						</p><p><small><a href="http://www.zhihu.com/question/20498510">为什么说 1366 × 768 是「反人类」的分辨率？</a></small></p>
+
+					</section>
+					<section>
+						<h3>按断点查询</h3>
+						<img src="lib/images/duandian.png" alt="">
+					</section>
+				</section>
+				<section>
+					<section>
 						<h3>响应式与模块化</h3>
 					</section>
 					<section>
 						<h3>目录结构</h3>
 						<img src="lib/images/mulu.png" alt="" />
+					</section>
+					<section>
+						<!-- <h3>目录结构说明</h3> -->
+						<img src="lib/images/根目录.png" alt="" />
 					</section>
 					<section>
 						<h3>页面模块化</h3>
@@ -93,7 +144,10 @@
 						<img style="width:300px;height:auto;float:left;margin-right:5px;" src="lib/images/wenzi.png" alt="">
 						<img style="width:500px;height:auto;float:left;margin-right:5px;" src="lib/images/icon.png" alt="">
 					</section>
-					
+					<section>
+						<h3>图标统一管理</h3>
+						<img src="lib/images/icon2.png" alt="" />
+					</section>
 				</section>
 				<!-- 4 -->
 				<section>
@@ -127,7 +181,34 @@
 	}</code></pre>
 						<p>看个demo: <a href="demo/弹性图片升级&隐藏图片/弹性图片升级&隐藏图片.html">demo</a></p>
 						</section>
-
+						<section>
+							<h3>2倍屏、3倍屏</h3>
+							<!-- <img src="lib/images/2t.png" alt=""> -->
+							<pre>
+								<code>/* 二倍屏 适配 */
+@media only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (-moz-min-device-pixel-ratio: 2),
+only screen and (-o-min-device-pixel-ratio: 2/1),
+only screen and (min-device-pixel-ratio: 2),
+only screen and (min-resolution: 2dppx) {
+	.VDC_ico{background-image:url(../../images/common/icon_2t.png); background-size:420px 320px;}
+	.VDC_video{background-image:url(../../images/common/loading_logo2t.png); background-size:130px 54px;}
+}</code>
+							</pre>
+							<pre>
+								<code>/* 三倍屏 适配 */
+@media only screen and (-webkit-min-device-pixel-ratio: 2.5),
+only screen and (min--moz-device-pixel-ratio: 2.5),
+only screen and (-o-min-device-pixel-ratio: 250/100),
+only screen and (min-device-pixel-ratio: 2.5) {
+    .content h1:after,
+    .content h2:after {
+        -webkit-transform: scaleY(1);
+        transform: scaleY(1);
+    }
+}</code>
+							</pre>
+						</section>
 					</section>
 				
 			</div>
